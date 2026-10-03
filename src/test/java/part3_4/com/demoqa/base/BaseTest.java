@@ -6,12 +6,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+
+import static java.lang.Thread.sleep;
+import static utilities.Utility.setUtilityDriver;
 
 public class BaseTest {
     private WebDriver driver;
     protected BasePage basePage;
     protected HomePage homePage;
-    private String DEMOQA_URL = "https://demoqa.com";
+    private String DEMOQA_URL = "https://demoqa.com/";
 
     @BeforeClass
     public void setUp() {
@@ -19,17 +23,19 @@ public class BaseTest {
         driver.manage().window().maximize();
 
     }
-    @BeforeClass
+    @BeforeMethod
     public void loadApplication() {
         driver.get(DEMOQA_URL);
         basePage = new BasePage();
         basePage.setDriver(driver);
+        setUtilityDriver();
         homePage = new HomePage();
 
     }
 
     @AfterClass
-    public void teaDown () {
+    public void tearDown() throws InterruptedException {
+        sleep(3000);
         driver.quit();
     }
 }
