@@ -5,6 +5,7 @@ target/
 .kotlin
 
 ### IntelliJ IDEA ###
+.idea/
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
@@ -64,10 +65,6 @@ build/
 hs_err_pid*
 replay_pid*
 
-
-.idea/
-target/
-*.iml
 
 #allure
 .allure
