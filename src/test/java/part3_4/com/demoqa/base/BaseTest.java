@@ -1,14 +1,13 @@
 package part3_4.com.demoqa.base;
 
 import com.demoqa.pages.HomePage;
-import com.saucedemo.pages.BasePage;
+import com.base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
-import static java.lang.Thread.sleep;
 import static utilities.Utility.setUtilityDriver;
 
 public class BaseTest {
